@@ -67,5 +67,25 @@ public class Manager : MonoBehaviour
                 cam2.SetActive(false);
             }
         }
+        if (Input.GetButtonDown("Cancel"))
+        {
+            if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+            }
+            else
+            {
+                Time.timeScale = 0;
+            }
+            
+        }
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            Time.timeScale = .5f;
+        }
+        if (Input.GetKeyUp(KeyCode.LeftShift) || Input.GetKeyUp(KeyCode.RightShift))
+        {
+            Time.timeScale = 1;
+        }
     }
 }
